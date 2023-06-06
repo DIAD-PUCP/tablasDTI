@@ -4,7 +4,7 @@ import streamlit as st
 from io import BytesIO
 from zipfile import ZipFile
 
-def true_score(difficulty,logits,inf=-5.0,sup=5.0):
+def true_score(difficulty,logits,inf=-5.5,sup=5.5):
     if not logits:
         difficulty = (difficulty-500)/100
     ni = difficulty.shape[0]
