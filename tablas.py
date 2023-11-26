@@ -16,6 +16,8 @@ def true_score(difficulty,logits,inf=-5.5,sup=5.5):
     df = pd.DataFrame({'Escala':hab[idx],'PuntajeAprox':p[idx]})
     last = pd.DataFrame({'Escala':[sup],'PuntajeAprox':[ni]})
     df = pd.concat([df,last],ignore_index=True)
+    if df.iloc[0,1] != 0: #el primer valor no es 0
+        df.iloc[0,1] = 0
     return df
 
 def tablas_eq(df,proceso,logit):
